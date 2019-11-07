@@ -1,0 +1,18 @@
+﻿  ConsoleApplication7.cpp
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(40): warning C4244: инициализация: преобразование "_Rep" в "unsigned int", возможна потеря данных
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(51): warning C4018: <=: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(52): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(56): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(123): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(124): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(143): warning C4244: +=: преобразование "const double" в "_Ty", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(195): warning C4018: <: несоответствие типов со знаком и без знака
+  ConsoleApplication7.vcxproj -> C:\Users\Andrey\source\repos\ConsoleApplication7\Debug\ConsoleApplication7.exe
