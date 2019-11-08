@@ -35,7 +35,17 @@ Matrix FloydAlgorythm(Matrix obj)
 }
 
 vector <int> GeneticSearch(Matrix Map, vector <int> points) {
+	
 	int cases = 76;
+	int generations = 75;
+	int ** RandVays = new int *[cases];
+	for (int i = 0; i < cases; i++) {
+		RandVays[i] = new int[points.size() + 3];
+	}
+	int ** Generation = new int *[cases];
+	for (int i = 0; i < cases; i++) {
+		Generation[i] = new int[points.size() + 3];
+	}
 	//cout << endl << Map;
 	unsigned seed = chrono::system_clock::now().time_since_epoch().count();
 	default_random_engine e(seed);
@@ -53,12 +63,18 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 		}
 		RandomVays[i].push_back(sum);
 	}
-	srand(time(0));
+	//srand(time(0));
 	//sort(VaysWeight.rbegin(), VaysWeight.rend());
 	//int middle = VaysWeight.size() / 2;
-	int generations = 75;
 	int end = points.size() + 2;
-	//vector <vector <int>> NewGeneration;
+	for (int i = 0; i < cases; i++) {
+		for (int j = 0; j <= end; j++) {
+			RandVays[i][j] = RandomVays[i][j];
+		}
+	}
+	
+	vector <int> BestWay = RandomVays[0];
+	int bestgeneration = 0;
 	for (int generation = 0; generation < generations; generation++) {
 		
 		/*for (int i = 0; i < cases - 1; i++) {// selection
@@ -73,17 +89,21 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 		for (int i = 0; i < cases; i++) {// tournament selection
 			int first = rand() % cases;
 			int second = rand() % cases;
-			if (RandomVays[first][end] < RandomVays[second][end]) {
-				RandomVays.push_back(RandomVays[first]);
+			if (RandVays[first][end] < RandVays[second][end]) {
+				for (int k = 0; k <= end; k++) {
+					Generation[i][k] = RandVays[first][k];
+				}
 			}
 			else {
-				RandomVays.push_back(RandomVays[second]);
+				for (int k = 0; k <= end; k++) {
+					Generation[i][k] = RandVays[second][k];
+				}
 			}
 		}
-		for (int i = 0; i < cases; i++) {// clearing preious generation
+		/*for (int i = 0; i < cases; i++) {// clearing preious generation
 			RandomVays.erase(RandomVays.begin());
-		}
-		for (int counter = 0; counter < cases / 2; counter++) {//next generation
+		}*/
+		for (int counter = 0; counter < cases; counter+= 2) {//next generation
 			
 			
 			int first = rand() % cases;
@@ -94,13 +114,13 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 			int sum1 = 0;
 			int sum2 = 0;
 			for (int k = 0; k < devider; k++) {
-				firstchild[k] = RandomVays[second][k];
-				secondchild[k] = RandomVays[first][k];
+				firstchild[k] = Generation[second][k];
+				secondchild[k] = Generation[first][k];
 				
 			}
 			for (int k = devider; k < end; k++) {
-				firstchild[k] = RandomVays[first][k];
-				secondchild[k] = RandomVays[second][k];
+				firstchild[k] = Generation[first][k];
+				secondchild[k] = Generation[second][k];
 			}
 			for (int i = devider; i < end; i++) {
 				for (int j = 0; j < devider; j++) {
@@ -125,27 +145,54 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 			}
 			firstchild[end] = sum1;
 			secondchild[end] = sum2;
-			RandomVays.push_back(firstchild);
-			RandomVays.push_back(secondchild);
+			for (int k = 0; k <= end; k++) {
+				RandVays[counter][k] = firstchild[k];
+				RandVays[counter + 1][k] = secondchild[k];
+			}
 
 		}
-		for (int i = 0; i < cases; i++) {// clearing preious generation
+		/*for (int i = 0; i < cases; i++) {// clearing preious generation
 			RandomVays.erase(RandomVays.begin());
-		}
+		}*/
 		int randnum1 = rand() % cases;// mutation
 		int randnum2 = rand() % (end - 2) + 1;
 		int randnum3 = rand() % (end - 2) + 1;
-		int bubble = RandomVays[randnum1][randnum2];
-		RandomVays[randnum1][randnum2]= RandomVays[randnum1][randnum3];// mutation in a random vay
-		RandomVays[randnum1][randnum3] = bubble;
-		RandomVays[randnum1][end] = 0;
+		int bubble = RandVays[randnum1][randnum2];
+		RandVays[randnum1][randnum2]= RandVays[randnum1][randnum3];// mutation in a random vay
+		RandVays[randnum1][randnum3] = bubble;
+		RandVays[randnum1][end] = 0;
 		for (int i = 0; i < end - 1; i++) {
-			RandomVays[randnum1][end] += Map[RandomVays[randnum1][i]][RandomVays[randnum1][i + 1]];
+			RandVays[randnum1][end] += Map[RandVays[randnum1][i]][RandVays[randnum1][i + 1]];
 		}
-		
+		/*for (int i = 0; i < cases - 1; i++) {// one more sorting
+			for (int j = 0; j < cases - i - 1; j++) {
+				if (RandomVays[j][end] < RandomVays[j + 1][end]) {
+					vector <int> bubble = RandomVays[j + 1];
+					RandomVays[j + 1] = RandomVays[j];
+					RandomVays[j] = bubble;
+				}
+			}
+		}*/
+		int index = -1;
+		int length = BestWay[end];
+		for (int i = 0; i < cases; i++) {
+			if (RandVays[i][end] < length) {
+				length = RandVays[i][end];
+				index = i;
+			}
+		}
+		if (index != -1) {
+			for (int i = 0; i <= end; i++) {
+				BestWay[i] = RandVays[index][i];
+			}
+		}
+		/*if (BestWay[end] > RandomVays[cases - 1][end]) {
+			BestWay = RandomVays[cases - 1];
+			bestgeneration = generation;
+		}*/
 	}
 	
-	for (int i = 0; i < cases - 1; i++) {// one more sorting
+	/*for (int i = 0; i < cases - 1; i++) {// one more sorting
 		for (int j = 0; j < cases - i - 1; j++) {
 			if (RandomVays[j][end] < RandomVays[j + 1][end]) {
 				vector <int> bubble = RandomVays[j + 1];
@@ -160,10 +207,18 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 		}
 		cout << endl;
 	}*/
-	return RandomVays[cases - 1];
+	for (int i = 0; i < cases; i++) {
+		delete[] RandVays[i];
+		delete[] Generation[i];
+	}
+	delete[] RandVays;
+	delete[] Generation;
+	cout << bestgeneration << endl;
+	return BestWay;
 }
 int main()
 {
+	srand(time(NULL));
 	/*Deliverer Warehouse = Deliverer(10000, 0, 0, 0);
 	cout << "Enter your number of boxes" << endl;
 	int count;
@@ -191,9 +246,13 @@ int main()
 		for (int i = 0; i < numberofpoints; i++) {
 			cin >> points[i];
 		}
-		vector <int> MyWay = GeneticSearch(FloydAlgorythm(A), points);
-		for (int i = 0; i < MyWay.size(); i++) {
-			cout << MyWay[i] << " ";
+		A = FloydAlgorythm(A);
+		for (int k = 0; k < 25; k++) {
+			vector <int> MyWay = GeneticSearch(A, points);
+			for (int i = 0; i < MyWay.size(); i++) {
+				cout << MyWay[i] << " ";
+			}
+			cout << endl;
 		}
 	}
 	catch (Error E) {
