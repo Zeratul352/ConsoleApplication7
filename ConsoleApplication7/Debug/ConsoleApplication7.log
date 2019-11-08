@@ -9,6 +9,6 @@ c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleappl
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(143): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(144): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(165): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(221): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(252): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(231): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(262): warning C4018: <: несоответствие типов со знаком и без знака
   ConsoleApplication7.vcxproj -> C:\Users\Andrey\source\repos\ConsoleApplication7\Debug\ConsoleApplication7.exe

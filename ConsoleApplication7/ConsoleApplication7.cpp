@@ -35,8 +35,8 @@ Matrix FloydAlgorythm(Matrix obj)
 }
 
 vector <int> GeneticSearch(Matrix Map, vector <int> points) {
-	
-	int cases = 76;
+	int deadline = 0;
+	int cases = 500;
 	int generations = 75;
 	int ** RandVays = new int *[cases];
 	for (int i = 0; i < cases; i++) {
@@ -173,6 +173,11 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 				}
 			}
 		}*/
+		
+		/*if (BestWay[end] > RandomVays[cases - 1][end]) {
+			BestWay = RandomVays[cases - 1];
+			bestgeneration = generation;
+		}*/
 		int index = -1;
 		int length = BestWay[end];
 		for (int i = 0; i < cases; i++) {
@@ -184,12 +189,17 @@ vector <int> GeneticSearch(Matrix Map, vector <int> points) {
 		if (index != -1) {
 			for (int i = 0; i <= end; i++) {
 				BestWay[i] = RandVays[index][i];
+				bestgeneration = generation;
 			}
+			deadline = 0;
 		}
-		/*if (BestWay[end] > RandomVays[cases - 1][end]) {
-			BestWay = RandomVays[cases - 1];
-			bestgeneration = generation;
-		}*/
+		else {
+			deadline++;
+		}
+		if (deadline == 5) {
+			break;
+			generation = generations;
+		}
 	}
 	
 	/*for (int i = 0; i < cases - 1; i++) {// one more sorting
