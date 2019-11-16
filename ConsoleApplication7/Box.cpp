@@ -9,11 +9,17 @@ void Box::SwapBoxes(Box * B1)
 	swap(B1->number, number);
 }
 
+Box Box::operator+(Box abox)
+{
+	Box A = Box(volume + abox.GetVolume(), number + "," + abox.GetNumber(), adress);
+	return A;
+}
+
 Box::Box()
 {
 }
 
-Box::Box(double vol, int num, string adr)
+Box::Box(double vol, string num, string adr)
 {
 	volume = vol;
 	number = num;
@@ -26,7 +32,7 @@ double Box::GetVolume()
 	return volume;
 }
 
-int Box::GetNumber()
+string Box::GetNumber()
 {
 	return number;
 }

@@ -5,17 +5,17 @@ using namespace std;
 class Box
 {
 	double volume;
-	int number;
+	string number;
 	string adress;
 	
 public:
 	Box();
-	Box(double vol, int num, string adress);
+	Box(double vol, string num, string adress);
 	double GetVolume();
-	int GetNumber();
+	string GetNumber();
 	string GetAdress();
 	void SwapBoxes(Box * B1);
-
+	Box operator+(Box abox);
 	~Box();
 };
 
