@@ -83,13 +83,14 @@ Matrix Matrix::StringToMatrix(string str)
 					}
 					point++;
 				}
-				else {
+				/*else {
 					//cout << m << "\n";
 					if (!strcspn(elements, &m)) {
+						cout << m << "\n";
 						throw Exeption1();
 						return Zero;
 					}
-				}
+				}*/
 			}
 		}
 	
@@ -122,7 +123,7 @@ Matrix Matrix::StringToMatrix(string str)
 	int i1 = 0;
 	int j1 = 0;
 	Matrix matr = Matrix(len, wid);
-	char charline[1000];
+	char charline[20000];
 	for (int i = 0; i < strlen(line); i++) {
 		charline[i] = line[i];
 	}
@@ -238,6 +239,7 @@ Matrix::Matrix(const Matrix & object)
 			matrix[i][j] = object.GetConstElem(i, j);
 		}
 	}
+
 }
 
 Matrix Matrix::CreateNew()
@@ -250,6 +252,25 @@ Matrix Matrix::CreateNew()
 	cin >> matrix;
 	return matrix;
 }
+
+/*void Matrix::FloydAlgorythm()
+{
+	for (int i = 0; i < length; i++) {
+		for (int j = 0; j < width; j++) {
+			if (matrix[i][j] == 0) {
+				matrix[i][j] = 10000.0;
+			}
+		}
+	}
+	for (int i = 0; i < length; i++) {
+		for (int j = 0; j < length; j++) {
+			for (int k = 0; k < length; k++) {
+				matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
+			}
+		}
+	}
+	
+}*/
 
 Matrix Matrix::operator+(double a)
 {
@@ -893,18 +914,18 @@ ostream & operator<<(ostream & cout, const Matrix & object)
 				if (a < 1000) {
 					if (a < 100) {
 						if (a < 10) {
-							cout << "     " << a;
+							cout << "    " << a;
 						}
 						else {
-							cout << "    " << a;
+							cout << "   " << a;
 						}
 					}
 					else {
-						cout << "   " << a;
+						cout << "  " << a;
 					}
 				}
 				else {
-					cout << "  " << a;
+					cout << " " << a;
 				}
 			}
 			else {

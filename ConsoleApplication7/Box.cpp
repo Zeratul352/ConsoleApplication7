@@ -19,7 +19,7 @@ Box::Box()
 {
 }
 
-Box::Box(double vol, string num, string adr)
+Box::Box(double vol, string num,int adr)
 {
 	volume = vol;
 	number = num;
@@ -37,9 +37,14 @@ string Box::GetNumber()
 	return number;
 }
 
-string Box::GetAdress()
+int Box::GetAdress()
 {
 	return adress;
+}
+
+string Box::GetStringAdress(vector<string> adr)
+{
+	return adr[adress];
 }
 
 

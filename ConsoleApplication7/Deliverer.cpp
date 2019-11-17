@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Deliverer.h"
+#include "Error.h"
+#include <fstream>
 
 
 Deliverer::Deliverer()
@@ -39,18 +41,20 @@ int Deliverer::GetNumberOfBoxes()
 	return CarryingNow.size();
 }
 
+
+
 void Deliverer::GroubMyBoxes()
 {
 	//vector <Box> New;
 	for (int i = 0; i < CarryingNow.size() - 1; i++) {// sorting by adress of boxes
 		for (int j = 0; j < CarryingNow.size() - i - 1; j++) {
-			if (CarryingNow[j].GetAdress() + CarryingNow[j + 1].GetAdress() > CarryingNow[j + 1].GetAdress() + CarryingNow[j].GetAdress()) {
+			if (CarryingNow[j].GetAdress() > CarryingNow[j + 1].GetAdress()) {
 				CarryingNow[j].SwapBoxes(&CarryingNow[j + 1]);
 			}
 		}
 	}
 	//string morf = CarryingNow[0].GetAdress();
-	//PrintDeliverer();
+	
 	for (int i = 0; i < CarryingNow.size() - 1; i++) {// uniting boxes with similar adress
 		if (CarryingNow[i + 1].GetAdress() == CarryingNow[i].GetAdress()) {
 			CarryingNow[i] = CarryingNow[i] + CarryingNow[i + 1];
@@ -58,6 +62,7 @@ void Deliverer::GroubMyBoxes()
 			i--;
 		}	
 	}
+	
 }
 
 Box Deliverer::GetBox(int i)
@@ -95,7 +100,7 @@ void Deliverer::VolumeSort()
 void Deliverer::PrintDeliverer()
 {
 	for (int i = 0; i < CarryingNow.size(); i++) {
-		cout << CarryingNow[i].GetNumber() << " " << CarryingNow[i].GetAdress() << " " << CarryingNow[i].GetVolume() << endl;
+		cout << CarryingNow[i].GetNumber() << " " << CarryingNow[i].GetStringAdress(adres) << " " << CarryingNow[i].GetVolume() << endl;
 	}
 }
 
@@ -116,7 +121,7 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map)
 		int adr = way[i + 1];
 		int index = 0;
 		for (int j = 0; j < CarryingNow.size(); j++) {
-			if (stof(CarryingNow[j].GetAdress()) == adr) {
+			if (CarryingNow[j].GetAdress() == adr) {
 				index = j;
 				break;
 			}
@@ -126,12 +131,17 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map)
 	}
 	for (int i = 0; i < way.size() - 3; i++) {
 		time += 5 + round(map->GetElem(way[i], way[i + 1]) / consumtion);
-		cout << NewCarry[i].GetNumber() << " " << NewCarry[i].GetAdress() << " ";
+		cout << NewCarry[i].GetNumber() << " " << NewCarry[i].GetStringAdress(adres) << " ";
 		PrintTime();
 	}
 	time += 5 + round(map->GetElem(way[way.size() - 3], way[way.size() - 2])) / consumtion;
 	cout << "Warehouse ";
 	PrintTime();
+}
+
+void Deliverer::SetAdres(vector<string> adress)
+{
+	adres = adress;
 }
 
 void Deliverer::FillBack(Deliverer * donor)
@@ -160,6 +170,38 @@ void Deliverer::FillFront(Deliverer * donor)
 	}
 }
 
+void Deliverer::InputFill()
+{
+	fstream in("input.txt");
+	//cout << "Enter your number of boxes" << endl;
+	int count;
+	in >> count;
+	//cout << "Enter your boxes" << endl;
+	//cout << "volume << number << adress" << endl;
+	for (int i = 0; i < count; i++) {
+		string vol;
+		string num;
+		string adr;
+		in >> vol;
+		double volume = stof(vol);
+		getline(in, adr);
+		AddBox(Box(volume, to_string(i + 1), stoi(adr)));
+	}
+	in.close();
+	//cout << endl;
+}
+
+void Deliverer::Distribute(Deliverer * samovyvos)
+{
+	for (int i = 0; i < CarryingNow.size(); i++) {
+		if ((CarryingNow[i].GetVolume() == 0) || (CarryingNow[i].GetAdress() == 0)) {
+			Box temp = TakeBox(i);
+			samovyvos->AddBox(temp);
+			i--;
+		}
+	}
+}
+
 bool Deliverer::IsEmpty()
 {
 	if (CarryingNow.size() == 0) {
@@ -172,7 +214,7 @@ vector<int> Deliverer::GetWayPoints()
 {
 	vector <int> way;
 	for (int i = 0; i < CarryingNow.size(); i++) {
-		way.push_back(stoi(CarryingNow[i].GetAdress()));
+		way.push_back(CarryingNow[i].GetAdress());
 	}
 	return way;
 }

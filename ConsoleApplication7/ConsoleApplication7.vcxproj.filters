@@ -24,10 +24,10 @@
     <ClInclude Include="Box.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OOP_Lab_Class_Overload_from_17.09.2019\OOP_Lab_Class_Overload_from_17.09.2019\Matrix.h">
+    <ClInclude Include="Error.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OOP_Lab_Class_Overload_from_17.09.2019\OOP_Lab_Class_Overload_from_17.09.2019\Error.h">
+    <ClInclude Include="Matrix.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,10 +44,10 @@
     <ClCompile Include="Box.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\OOP_Lab_Class_Overload_from_17.09.2019\OOP_Lab_Class_Overload_from_17.09.2019\Matrix.cpp">
+    <ClCompile Include="Error.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\OOP_Lab_Class_Overload_from_17.09.2019\OOP_Lab_Class_Overload_from_17.09.2019\Error.cpp">
+    <ClCompile Include="Matrix.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

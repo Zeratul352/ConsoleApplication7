@@ -57,3 +57,23 @@ public:
 	Exception4 & operator=(const Exception4& object);
 	~Exception4();
 };
+
+class BoxSummaaryExeption :
+	public Error
+{
+public:
+	BoxSummaaryExeption();
+	BoxSummaaryExeption(const BoxSummaaryExeption& object);
+	BoxSummaaryExeption & operator=(const BoxSummaaryExeption& object);
+	~BoxSummaaryExeption();
+};
+
+class BadInputException :
+	public Error
+{
+public:
+	BadInputException();
+	BadInputException(const BadInputException& object);
+	BadInputException & operator=(const BadInputException& object);
+	~BadInputException();
+};
