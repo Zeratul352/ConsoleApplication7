@@ -134,7 +134,7 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map)
 		cout << NewCarry[i].GetNumber() << " " << NewCarry[i].GetStringAdress(adres) << " ";
 		PrintTime();
 	}
-	time += 5 + round(map->GetElem(way[way.size() - 3], way[way.size() - 2])) / consumtion;
+	time += 5 + round(map->GetElem(way[way.size() - 3], way[way.size() - 2])) / consumtion + rand() % 11;
 	cout << "Warehouse ";
 	PrintTime();
 }
