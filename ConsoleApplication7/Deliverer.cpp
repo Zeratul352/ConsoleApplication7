@@ -97,10 +97,12 @@ void Deliverer::VolumeSort()
 	
 }
 
-void Deliverer::PrintDeliverer()
+void Deliverer::PrintDeliverer(string filename)
 {
+	ofstream out;
+	out.open(filename);
 	for (int i = 0; i < CarryingNow.size(); i++) {
-		cout << CarryingNow[i].GetNumber() << " " << CarryingNow[i].GetStringAdress(adres) << " " << CarryingNow[i].GetVolume() << endl;
+		out << CarryingNow[i].GetNumber() << " " << CarryingNow[i].GetStringAdress(adres) << " " << CarryingNow[i].GetVolume() << endl;
 	}
 }
 
@@ -114,8 +116,10 @@ void Deliverer::PrintTime()
 	}
 }
 
-void Deliverer::SchedulePrint(vector<int> way, Matrix * map)
+void Deliverer::SchedulePrint(vector<int> way, Matrix * map, string filename)
 {
+	ofstream out;
+	out.open(filename, ios::app);
 	vector <Box> NewCarry;
 	for (int i = 0; i < CarryingNow.size(); i++) {
 		int adr = way[i + 1];
@@ -130,13 +134,25 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map)
 		
 	}
 	for (int i = 0; i < way.size() - 3; i++) {
-		time += 5 + round(map->GetElem(way[i], way[i + 1]) / consumtion);
-		cout << NewCarry[i].GetNumber() << " " << NewCarry[i].GetStringAdress(adres) << " ";
-		PrintTime();
+		time += 5 + round(map->GetElem(way[i], way[i + 1]) / consumtion) + rand()%11;
+		out << setw(25) << left << NewCarry[i].GetNumber();
+		out << setw(50) << left << NewCarry[i].GetStringAdress(adres);
+		if (time % 60 < 10) {
+			out << time / 60 << ":0" << time % 60 << endl;
+		}
+		else {
+			out << time / 60 << ":" << time % 60 << endl;
+		}
 	}
+	
 	time += 5 + round(map->GetElem(way[way.size() - 3], way[way.size() - 2])) / consumtion + rand() % 11;
-	cout << "Warehouse ";
-	PrintTime();
+	out << setw(26) << left << " " << setw(49) << left << "Warehouse";
+	if (time % 60 < 10) {
+		out << time / 60 << ":0" << time % 60 << endl;
+	}
+	else {
+		out << time / 60 << ":" << time % 60 << endl;
+	}
 }
 
 void Deliverer::SetAdres(vector<string> adress)
@@ -162,7 +178,7 @@ void Deliverer::FillFront(Deliverer * donor)
 	for (int i = 0; i < donor->CarryingNow.size(); i++)
 	{
 
-		if (volumecarrying + donor->CarryingNow[i].GetVolume() < capacity) {
+		if (volumecarrying + donor->CarryingNow[i].GetVolume() <= capacity) {
 			Box gift = donor->TakeBox(i);
 			AddBox(gift);
 			i--;
@@ -184,8 +200,18 @@ void Deliverer::InputFill()
 		string adr;
 		in >> vol;
 		double volume = stof(vol);
+		if (volume > 1000) {
+			volume = 0;
+		}
 		getline(in, adr);
-		AddBox(Box(volume, to_string(i + 1), stoi(adr)));
+		int intadress = 0;
+		for (int j = 0; j < adres.size(); j++) {
+			if (adres[j] == adr) {
+				intadress = j;
+				break;
+			}
+		}
+		AddBox(Box(volume, to_string(i + 1), intadress));
 	}
 	in.close();
 	//cout << endl;

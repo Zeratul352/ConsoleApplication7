@@ -277,8 +277,8 @@ int main()
 		cout << endl;
 		Deliverer Car = Deliverer(1000, 500, 600, 0);
 		Deliverer Bike = Deliverer(50, 300, 300, 0);
-		cout << "Warehouse ";
-		Car.PrintTime();
+		//cout << "Warehouse ";
+		//Car.PrintTime();
 		while (!Warehouse.IsEmpty()) {
 			if (Bike.time <= Car.time) {
 				Bike.FillFront(&Warehouse);
@@ -286,28 +286,28 @@ int main()
 				if (way.size() == 3) {
 					Bike.time += 60;
 					continue;
-				}for (int i = 0; i < way.size(); i++) {
+				}/*for (int i = 0; i < way.size(); i++) {
 					cout << way[i] << " ";
-				}
-				cout << endl << "Bike" << endl;
-				Bike.SchedulePrint(way, &Map);
+				}*/
+			//cout << endl << "Bike" << endl;
+				Bike.SchedulePrint(way, &Map, "Bike");
 				Bike.EmptyDeliverer();
 			}
 			else {
 				Car.FillBack(&Warehouse);
 				vector <int> way = GetValidPath(Car.GetWayPoints(), &Map);
-				for (int i = 0; i < way.size(); i++) {
+				/*for (int i = 0; i < way.size(); i++) {
 					cout << way[i] << " ";
-				}
-				cout <<endl << "Car" << endl;
-				Car.SchedulePrint(way, &Map);
+				}*/
+				//cout <<endl << "Car" << endl;
+				Car.SchedulePrint(way, &Map, "Car");
 				Car.EmptyDeliverer();
 			}
 			cout << endl << endl;
 			
 		}
-		cout << "Selftakeout" << endl;
-		SelfTakeOut.PrintDeliverer();
+		//cout <<  << endl;
+		SelfTakeOut.PrintDeliverer("Selftakeout");
 		/*cout << "enter number of points << points" << endl;
 		int numberofpoints;
 		cin >> numberofpoints;

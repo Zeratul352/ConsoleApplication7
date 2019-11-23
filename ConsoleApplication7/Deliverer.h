@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <iomanip>
 #include "Box.h"
 #include "Matrix.h"
 #include "Error.h"
@@ -29,9 +30,9 @@ public:
 	void AddBox(Box b);
 	Box TakeBox(int i);
 	void VolumeSort();
-	void PrintDeliverer();
+	void PrintDeliverer(string filename);
 	void PrintTime();
-	void SchedulePrint(vector <int> way, Matrix * map);
+	void SchedulePrint(vector <int> way, Matrix * map, string filename);
 	void SetAdres(vector <string> adress);
 	void FillBack(Deliverer * donor);
 	void FillFront(Deliverer * donor);

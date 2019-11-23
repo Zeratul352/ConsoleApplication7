@@ -2,13 +2,14 @@
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(49): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(50): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(58): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(102): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(120): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(123): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(132): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(133): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(104): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(124): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(127): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(136): warning C4018: <: несоответствие типов со знаком и без знака
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(137): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(162): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(196): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(216): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(148): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(178): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(208): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(222): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(242): warning C4018: <: несоответствие типов со знаком и без знака
   ConsoleApplication7.vcxproj -> C:\Users\Andrey\source\repos\ConsoleApplication7\Debug\ConsoleApplication7.exe
