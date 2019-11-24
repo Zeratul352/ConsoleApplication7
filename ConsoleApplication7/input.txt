@@ -29,9 +29,9 @@
 100 Pidhirnyy lane /Turhunyeva str
 150 Pidhirnyy lane /Turhunyeva str
 120 Klavdiyi Shulzhenko str/ Druzhby str
-100 Druzhby str/B. Khmel?nytskoho str
+100 Druzhby str/B. Khmelnytskoho str
 50 B. Khmelnytskoho str /Vodoprovidnyy lane
-50 Myudovska str/ Myudovs?ka lane
+50 Myudovska str/ Myudovska lane
 100 Shmidta str / Likarnyanyy lane
 50 Likarnyanyy lane / Likarnyanyy str
 50 Admirala Ushakova str / Zaliznychnyy lane

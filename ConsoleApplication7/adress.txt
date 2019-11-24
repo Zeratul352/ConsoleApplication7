@@ -30,11 +30,11 @@
  Pidhirnyy lane /Turhunyeva str
  Pidhirnyy lane /Klavdiyi Shulzhenko str
  Klavdiyi Shulzhenko str/ Druzhby str
- Druzhby str/B. Khmel?nytskoho str
+ Druzhby str/B. Khmelnytskoho str
  B. Khmelnytskoho str /Vodoprovidnyy lane
- Myudovska str/ Myudovs?ka lane
- Myudovs?ka str / Kasicha str
- Myudovs?ka str/ Shmidta str
+ Myudovska str/ Myudovska lane
+ Myudovska str / Kasicha str
+ Myudovska str/ Shmidta str
  Shmidta str / Oleksandra Hryboyedova str
  Oleksandra Hryboyedova str/Shmidta lane
  Shmidta str / Likarnyanyy lane

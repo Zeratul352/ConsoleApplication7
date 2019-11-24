@@ -56,7 +56,7 @@ void Deliverer::GroubMyBoxes()
 	//string morf = CarryingNow[0].GetAdress();
 	
 	for (int i = 0; i < CarryingNow.size() - 1; i++) {// uniting boxes with similar adress
-		if (CarryingNow[i + 1].GetAdress() == CarryingNow[i].GetAdress()) {
+		if ((CarryingNow[i + 1].GetAdress() == CarryingNow[i].GetAdress()) && (CarryingNow[i].GetVolume() + CarryingNow[i + 1].GetVolume() <= 1000)) {
 			CarryingNow[i] = CarryingNow[i] + CarryingNow[i + 1];
 			CarryingNow.erase(CarryingNow.begin() + i + 1);
 			i--;
@@ -153,6 +153,7 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map, string filename)
 	else {
 		out << time / 60 << ":" << time % 60 << endl;
 	}
+	out.close();
 }
 
 void Deliverer::SetAdres(vector<string> adress)
