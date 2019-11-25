@@ -1,4 +1,5 @@
-﻿  ConsoleApplication7.cpp
+﻿  Box.cpp
+  ConsoleApplication7.cpp
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(3): warning C4005: _CRT_SECURE_NO_WARNINGS: изменение макроопределения
   c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp: note: см. предыдущее определение "_CRT_SECURE_NO_WARNINGS"
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(3): warning C4603: _CRT_SECURE_NO_WARNINGS: макрос не определен или определение изменилось после использования предкомпилированного заголовка
@@ -27,8 +28,8 @@ c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.c
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(137): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(148): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
 c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(179): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(209): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(223): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(243): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(206): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(220): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\deliverer.cpp(240): warning C4018: <: несоответствие типов со знаком и без знака
   Создание кода...
   ConsoleApplication7.vcxproj -> C:\Users\Andrey\source\repos\ConsoleApplication7\Debug\ConsoleApplication7.exe

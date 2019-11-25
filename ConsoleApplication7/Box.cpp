@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Box.h"
+#include "Error.h"
 
 
 void Box::SwapBoxes(Box * B1)
@@ -11,6 +12,9 @@ void Box::SwapBoxes(Box * B1)
 
 Box Box::operator+(Box abox)
 {
+	if (this->adress != abox.GetAdress()) {// can only sum boxes with same adress
+		throw BoxSummaaryExeption();
+	}
 	Box A = Box(volume + abox.GetVolume(), number + "," + abox.GetNumber(), adress);
 	return A;
 }

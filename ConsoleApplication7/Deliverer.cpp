@@ -12,7 +12,7 @@ Deliverer::Deliverer(double cap, double sal, double cons, double volume)
 {
 	capacity = cap;
 	salary = sal;
-	consumtion = cons;
+	speed = cons;
 	volumecarrying = volume;
 }
 
@@ -26,9 +26,9 @@ double Deliverer::GetSalary()
 	return salary;
 }
 
-double Deliverer::GetConsumption()
+double Deliverer::GetSpeed()
 {
-	return consumtion;
+	return speed;
 }
 
 double Deliverer::GetVolume()
@@ -45,7 +45,7 @@ int Deliverer::GetNumberOfBoxes()
 
 void Deliverer::GroubMyBoxes()
 {
-	//vector <Box> New;
+	
 	for (int i = 0; i < CarryingNow.size() - 1; i++) {// sorting by adress of boxes
 		for (int j = 0; j < CarryingNow.size() - i - 1; j++) {
 			if (CarryingNow[j].GetAdress() > CarryingNow[j + 1].GetAdress()) {
@@ -53,7 +53,7 @@ void Deliverer::GroubMyBoxes()
 			}
 		}
 	}
-	//string morf = CarryingNow[0].GetAdress();
+	
 	
 	for (int i = 0; i < CarryingNow.size() - 1; i++) {// uniting boxes with similar adress
 		if ((CarryingNow[i + 1].GetAdress() == CarryingNow[i].GetAdress()) && (CarryingNow[i].GetVolume() + CarryingNow[i + 1].GetVolume() <= 1000)) {
@@ -134,7 +134,7 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map, string filename)
 		
 	}
 	for (int i = 0; i < way.size() - 3; i++) {
-		time += 5 + round(map->GetElem(way[i], way[i + 1]) / consumtion) + rand()%11;
+		time += 5 + round(map->GetElem(way[i], way[i + 1]) / speed) + rand()%11;
 		out << setw(25) << left << NewCarry[i].GetNumber();
 		out << setw(50) << left << NewCarry[i].GetStringAdress(adres);
 		if (time % 60 < 10) {
@@ -145,7 +145,7 @@ void Deliverer::SchedulePrint(vector<int> way, Matrix * map, string filename)
 		}
 	}
 	
-	time += 5 + round(map->GetElem(way[way.size() - 3], way[way.size() - 2])) / consumtion + rand() % 11;
+	time += 5 + round(map->GetElem(way[way.size() - 3], way[way.size() - 2])) / speed + rand() % 11;
 	out << setw(26) << left << " " << setw(49) << left << "Warehouse";
 	if (time % 60 < 10) {
 		out << time / 60 << ":0" << time % 60 << endl;
@@ -190,11 +190,8 @@ void Deliverer::FillFront(Deliverer * donor)
 void Deliverer::InputFill()
 {
 	fstream in("input.txt");
-	//cout << "Enter your number of boxes" << endl;
 	int count;
 	in >> count;
-	//cout << "Enter your boxes" << endl;
-	//cout << "volume << number << adress" << endl;
 	for (int i = 0; i < count; i++) {
 		string vol;
 		string num;
@@ -215,7 +212,7 @@ void Deliverer::InputFill()
 		AddBox(Box(volume, to_string(i + 1), intadress));
 	}
 	in.close();
-	//cout << endl;
+	
 }
 
 void Deliverer::Distribute(Deliverer * samovyvos)
