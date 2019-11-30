@@ -9,7 +9,7 @@ void Matrix::Create()
 	for (int i = 0; i < length; i++) {
 		matrix[i] = new double [width];
 	}
-	//cout << "Matrix.ctor(" << length << ", " << width << ")" << endl;
+	
 }
 
 bool Matrix::Overflow(double obj, double a)
@@ -47,15 +47,7 @@ bool Matrix::Overflow(double obj, double a)
 		}
 	}
 	return false;
-	/*if ((obj >= 0) && (obj + a >= 0)) {
-		return true;
-	}
-	else if ((obj <= 0) && (obj + a <= 0)) {
-		return true;
-	}
-	else {
-		return false;
-	}*/
+	
 }
 
 Matrix Matrix::StringToMatrix(string str)

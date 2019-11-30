@@ -189,7 +189,7 @@ void Deliverer::FillFront(Deliverer * donor)
 
 void Deliverer::InputFill()
 {
-	fstream in("input.txt");
+	fstream in("input1.txt");
 	int count;
 	in >> count;
 	for (int i = 0; i < count; i++) {

@@ -108,9 +108,7 @@ vector <int> GeneticSearch(Matrix * Map, vector <int> points) {// Main mathemati
 				}
 			}
 		}
-		/*for (int i = 0; i < cases; i++) {// clearing preious generation
-			RandomVays.erase(RandomVays.begin());
-		}*/
+		
 		for (int counter = 0; counter < cases; counter+= 2) {// crossower
 			
 			
@@ -232,10 +230,13 @@ int main()
 		cout << endl;// to check the progress of the programm
 		Deliverer SelfTakeOut = Deliverer(10000, 0, 0, 0);// boxes with some errors or that are for self take out will be left there
 		Warehouse.Distribute(&SelfTakeOut);// taking unusual boxes out of warehouse
+		//Warehouse.PrintDeliverer("AfterDistribution");
 		Warehouse.GroubMyBoxes();// groupping boxes by adresses
 		cout << endl;
+		//Warehouse.PrintDeliverer("AfterGrouping");
 		Warehouse.VolumeSort();// sorting boxes by their volume
 		cout << endl;
+		//Warehouse.PrintDeliverer("AfterSorting");
 		Deliverer Car = Deliverer(1000, 500, 600, 0);// first deliverer
 		Deliverer Bike = Deliverer(50, 300, 300, 0);// second deliverer; you can use any number of them
 		ofstream out;// initialising schedule output for deliverers
@@ -247,24 +248,30 @@ int main()
 		out << setw(25) << left << "NUMBER OF BOXES" << setw(50) << left << " ADRESS" << "APPROXIMATE TIME" << endl;
 		out << "___________________________________________________________________________________________" << endl;
 		out.close();
+		int k = 0;
 		while (!Warehouse.IsEmpty()) {// work, until warehouse isn't empty
-			if (Bike.time <= Car.time) {// we fill the bike first; tag 1
+			k++;
+			/*if (Bike.time <= Car.time) {// we fill the bike first; tag 1
 				Bike.FillFront(&Warehouse);// bike take boxes with the lowest veight
 				vector <int> way = GetValidPath(Bike.GetWayPoints(), &Map);// searching for an optimal vay of delivering boxes
 				if (way.size() == 3) {// if there is nothing to take -> procrastinate
 					Bike.time += 60;
 					continue;
 				}
+				//Bike.PrintDeliverer("After " + to_string(k) + " iteration_Bike(Case 2)");
 				Bike.SchedulePrint(way, &Map, "Bike");// processing and building a schedule for a bike
 				Bike.EmptyDeliverer();// it returns empty;
 			}
-			else {// the same to the car; tag 2
+			else */{// the same to the car; tag 2
 				Car.FillBack(&Warehouse);
 				vector <int> way = GetValidPath(Car.GetWayPoints(), &Map);
+				//Car.PrintDeliverer("After " + to_string(k) + " iteration_Car(Case 2)");
 				Car.SchedulePrint(way, &Map, "Car");
 				Car.EmptyDeliverer();
 			}
 			cout << endl << endl;
+			//Warehouse.PrintDeliverer("After " + to_string(k) + " iteration(Case 2)");
+			
 			
 		}
 		SelfTakeOut.PrintDeliverer("Selftakeout");// another file with everything that we can't distribute
