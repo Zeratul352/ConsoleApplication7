@@ -251,7 +251,7 @@ int main()
 		int k = 0;
 		while (!Warehouse.IsEmpty()) {// work, until warehouse isn't empty
 			k++;
-			/*if (Bike.time <= Car.time) {// we fill the bike first; tag 1
+			if (Bike.time <= Car.time) {// we fill the bike first; tag 1
 				Bike.FillFront(&Warehouse);// bike take boxes with the lowest veight
 				vector <int> way = GetValidPath(Bike.GetWayPoints(), &Map);// searching for an optimal vay of delivering boxes
 				if (way.size() == 3) {// if there is nothing to take -> procrastinate
@@ -262,7 +262,7 @@ int main()
 				Bike.SchedulePrint(way, &Map, "Bike");// processing and building a schedule for a bike
 				Bike.EmptyDeliverer();// it returns empty;
 			}
-			else */{// the same to the car; tag 2
+			else {// the same to the car; tag 2
 				Car.FillBack(&Warehouse);
 				vector <int> way = GetValidPath(Car.GetWayPoints(), &Map);
 				//Car.PrintDeliverer("After " + to_string(k) + " iteration_Car(Case 2)");

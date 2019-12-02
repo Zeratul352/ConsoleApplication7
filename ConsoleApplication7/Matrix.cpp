@@ -137,33 +137,7 @@ Matrix Matrix::StringToMatrix(string str)
 		}
 		charline[i] = ' ';
 	}
-	/*for (int i = 1; i < line.size; i++) {// массив с индексами , и ; первое вхождение числа
-		char num[20];
-		int j = 0;
-		double a = atof(num);
-		if (a != 0.0) {
-			matr.SetElem(i1, j1, a);
-			if (koma != 0) {
-				i = line.find(',');
-				j1++;
-				koma--;
-			}
-			if (point != 0) {
-				i = line.find(';')
-			}
-		}
-		else {
-			return Zero;
-		}
-		
-
-		/*if ((line[i] != '[') && (line[i] != ']') && (line[i] != ';') && (line[i] != ',')) {
-			num[j] = line[i];
-			j++;
-		}
-		else if(line[i] == ','){
-			double a = atof(num);
-		}*/
+	
 	return matr;
 }
 
@@ -193,7 +167,7 @@ Matrix::Matrix(int len, int wid)
 
 Matrix::Matrix(int elem)
 {
-	//cout << "constructor" << endl;
+	
 	length = 1;
 	width = 1;
 	Create();
@@ -202,7 +176,7 @@ Matrix::Matrix(int elem)
 
 Matrix::Matrix(int len, int wid, double ** matr)
 {
-	//cout << "constructor" << endl;
+	
 	length = len;
 	width = wid;
 	Create();
@@ -221,11 +195,11 @@ Matrix::Matrix(string str)
 
 Matrix::Matrix(const Matrix & object)
 {
-	//cout << "copy constructor" << endl;
+	
 	length = object.GetConstLength();
 	width = object.GetConstWidth();
 	Create();
-	//Matrix matrix = Matrix(len, wid);
+	
 	for (int i = 0; i < length; i++) {
 		for (int j = 0; j < width; j++) {
 			matrix[i][j] = object.GetConstElem(i, j);
@@ -245,24 +219,7 @@ Matrix Matrix::CreateNew()
 	return matrix;
 }
 
-/*void Matrix::FloydAlgorythm()
-{
-	for (int i = 0; i < length; i++) {
-		for (int j = 0; j < width; j++) {
-			if (matrix[i][j] == 0) {
-				matrix[i][j] = 10000.0;
-			}
-		}
-	}
-	for (int i = 0; i < length; i++) {
-		for (int j = 0; j < length; j++) {
-			for (int k = 0; k < length; k++) {
-				matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
-			}
-		}
-	}
-	
-}*/
+
 
 Matrix Matrix::operator+(double a)
 {
@@ -354,15 +311,7 @@ Matrix Matrix::operator*(string str)
 
 Matrix Matrix::operator/(double a)
 {
-	/*if (a == 0) {
-		double ** mat = new double*[1];
-		for (int i = 0; i < 1; i++) {
-			mat[i] = new double[1];
-		}
-		mat[0][0] = 0;
-		Matrix matr = Matrix(1, 1, mat);
-		return matr;
-	}*/
+	
 	
 		if (a == 0) {
 			throw Exception3();
@@ -456,13 +405,7 @@ Matrix Matrix::operator/(Matrix matrix1) {
 Matrix & Matrix::operator+=(double a)
 {
 	if (this->GetLength() != this->GetWidth()) {
-		/*double ** mat = new double*[1];
-		for (int i = 0; i < 1; i++) {
-			mat[i] = new double[1];
-		}
-		mat[0][0] = 0;
-		Matrix matr = Matrix(1, 1, mat);
-		return matr;*/
+		
 		throw Exception4();
 	}
 	for (int i = 0; i < this->GetLength(); i++) {
@@ -577,7 +520,7 @@ Matrix & Matrix::operator+=(Matrix matrix1)
 		*this = Zero;
 		return *this;
 	}
-	//Matrix matr = Matrix(this->length, this->width, this->matrix);
+	
 	for (int i = 0; i < this->length; i++) {
 		for (int j = 0; j < this->width; j++) {
 			if (Overflow(matrix[i][j], matrix1.GetElem(i, j))) {
@@ -599,7 +542,7 @@ Matrix & Matrix::operator-=(Matrix matrix1)
 		*this = Zero;
 		return *this;
 	}
-	//Matrix matr = Matrix(this->length, this->width, this->matrix);
+	
 	for (int i = 0; i < this->length; i++) {
 		for (int j = 0; j < this->width; j++) {
 			if (Overflow(matrix[i][j], -matrix1.GetElem(i, j))) {
@@ -706,17 +649,7 @@ Matrix & Matrix::operator--()
 Matrix Matrix::operator--(int) {
 	Matrix temp = *this;
 	if (this->length != this->width) {
-		/*Matrix matr = Matrix(1, 1);
-		matr.SetElem(0, 0, 0);
-		this->length = matr.GetLength();
-		this->width = matr.GetWidth();
-		for (int i = 0; i < this->length; i++) {
-			delete this->matrix[i];
-		}
-		this->matrix = new double*[this->length];
-		for (int i = 0; i < this->length; i++) {
-			this->matrix[i] = new double[this->width];
-		}*/
+		
 		throw Exception4();
 		*this = Zero;
 		return *this;
@@ -735,7 +668,7 @@ Matrix Matrix::operator--(int) {
 
 bool Matrix::operator>(Matrix matrix1)
 {
-	double a = this->GetSumOfElements(*this); //??? will it work???
+	double a = this->GetSumOfElements(*this);
 	double b = GetSumOfElements(matrix1);
 	if (a > b) {
 		return true;
@@ -744,7 +677,7 @@ bool Matrix::operator>(Matrix matrix1)
 }
 bool Matrix::operator<(Matrix matrix1)
 {
-	double a = this->GetSumOfElements(*this); //??? will it work???
+	double a = this->GetSumOfElements(*this); 
 	double b = GetSumOfElements(matrix1);
 	if (a < b) {
 		return true;
@@ -753,7 +686,7 @@ bool Matrix::operator<(Matrix matrix1)
 }
 bool Matrix::operator>=(Matrix matrix1)
 {
-	double a = this->GetSumOfElements(*this); //??? will it work???
+	double a = this->GetSumOfElements(*this); 
 	double b = GetSumOfElements(matrix1);
 	if (a >= b) {
 		return true;
@@ -762,7 +695,7 @@ bool Matrix::operator>=(Matrix matrix1)
 }
 bool Matrix::operator<=(Matrix matrix1)
 {
-	double a = this->GetSumOfElements(*this); //??? will it work???
+	double a = this->GetSumOfElements(*this);
 	double b = GetSumOfElements(matrix1);
 	if (a <= b) {
 		return true;
@@ -771,7 +704,7 @@ bool Matrix::operator<=(Matrix matrix1)
 }
 bool Matrix::operator==(Matrix matrix1)
 {
-	double a = this->GetSumOfElements(*this); //??? will it work???
+	double a = this->GetSumOfElements(*this); 
 	double b = GetSumOfElements(matrix1);
 	if (a == b) {
 		return true;
@@ -781,7 +714,7 @@ bool Matrix::operator==(Matrix matrix1)
 
 bool Matrix::operator!=(Matrix matrix1)
 {
-	double a = this->GetSumOfElements(*this); //??? will it work???
+	double a = this->GetSumOfElements(*this); 
 	double b = GetSumOfElements(matrix1);
 	if (a != b) {
 		return true;
@@ -808,17 +741,14 @@ Matrix& Matrix::operator=(const Matrix & object)
 		Create();
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < width; j++) {
-				matrix[i][j] = object.GetConstElem(i, j);// some error happens here
+				matrix[i][j] = object.GetConstElem(i, j);
 			}
 		}
 	}
 	return *this;
 }
 
-/*ostream & Matrix::operator<<(ostream & cout, const Matrix& object)
-{
-	
-}*/
+
 
 
 
@@ -889,12 +819,12 @@ double Matrix::GetSumOfElements(Matrix matrix)
 
 Matrix::~Matrix()
 {
-	//cout << "matrix.destructor start(" << length << " , " << width << ")"<< endl;
+	
 	for (int i = 0; i < length; i++) {
 		delete[] this->matrix[i];
 	}
 	delete[] this->matrix;
-	//cout << "matrix.destructor end(" << length << " , " << width << ")" << endl;
+	
 }
 
 ostream & operator<<(ostream & cout, const Matrix & object)
