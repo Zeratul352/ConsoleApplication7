@@ -1,18 +1,24 @@
 ﻿  ConsoleApplication7.cpp
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(40): warning C4244: инициализация: преобразование "_Rep" в "unsigned int", возможна потеря данных
-          with
-          [
-              _Rep=std::chrono::system_clock::rep
-          ]
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(51): warning C4018: <=: несоответствие типов со знаком и без знака
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(52): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(56): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(123): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(124): warning C4244: +=: преобразование "const double" в "int", возможна потеря данных
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(143): warning C4244: +=: преобразование "const double" в "_Ty", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(17): warning C4005: _CRT_SECURE_NO_WARNINGS: изменение макроопределения
+  c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp: note: см. предыдущее определение "_CRT_SECURE_NO_WARNINGS"
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(17): warning C4603: _CRT_SECURE_NO_WARNINGS: макрос не определен или определение изменилось после использования предкомпилированного заголовка
+  c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(17): note: Добавление макроопределения в предкомпилированный заголовок вместо определения его здесь
+  c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(18): note: использование предварительно скомпилированного заголовка
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(60): warning C4244: =: преобразование "double" в "_Ty", возможна потеря данных
           with
           [
               _Ty=int
           ]
-c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(195): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(82): warning C4018: <=: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(83): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(149): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(150): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(168): warning C4244: +=: преобразование "double" в "int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(215): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\consoleapplication7.cpp(223): warning C4018: <: несоответствие типов со знаком и без знака
+  Matrix.cpp
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\matrix.cpp(63): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\matrix.cpp(97): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\andrey\source\repos\consoleapplication7\consoleapplication7\matrix.cpp(119): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
   ConsoleApplication7.vcxproj -> C:\Users\Andrey\source\repos\ConsoleApplication7\Debug\ConsoleApplication7.exe

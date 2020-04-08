@@ -119,3 +119,54 @@ Exception4 & Exception4::operator=(const Exception4 & object)
 Exception4::~Exception4()
 {
 }
+
+
+BoxSummaaryExeption::BoxSummaaryExeption():Error(5, "Can't summarise those boxes")
+{
+}
+
+BoxSummaaryExeption::BoxSummaaryExeption(const BoxSummaaryExeption & object)
+{
+	errortype = object.errortype;
+	errorcontent = object.errorcontent;
+}
+
+BoxSummaaryExeption & BoxSummaaryExeption::operator=(const BoxSummaaryExeption & object)
+{
+	if (&object != this) {
+		errortype = object.errortype;
+		errorcontent = object.errorcontent;
+	}
+	return *this;
+}
+
+
+BoxSummaaryExeption::~BoxSummaaryExeption()
+{
+}
+
+
+BadInputException::BadInputException(): Error(6, "Bad input format of data")
+{
+
+}
+
+BadInputException::BadInputException(const BadInputException & object)
+{
+	errortype = object.errortype;
+	errorcontent = object.errorcontent;
+}
+
+BadInputException & BadInputException::operator=(const BadInputException & object)
+{
+	if (&object != this) {
+		errortype = object.errortype;
+		errorcontent = object.errorcontent;
+	}
+	return *this;
+}
+
+
+BadInputException::~BadInputException()
+{
+}

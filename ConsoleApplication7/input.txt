@@ -1,0 +1,41 @@
+40
+150 Nova Poshta
+150 Nova Poshta
+15 Nova Poshta
+60 Nova Poshta
+40 Nova Poshta
+150 Nova Poshta
+20 Nova Poshta
+60 Slobozhanska str,82
+150 Slobozhanska str,82
+50 Zakhidna str,20
+100 Gagarina str,77
+50 Cooperativna str/Zlahody str
+150 Robocha str,10
+50 Dzherelna str,18
+60 Zvyazku str/ Depovska str
+40 Depovska str/ Shkilna str
+100 Depovska str/ Shkilna str
+100 Depovska str/ Shkilna str
+50 Bibliotechniy lane / Depovska str
+60 Bibliotechniy lane / Depovska str
+120 Bibliotechniy lane / Depovska str
+100 Depovska str / Turhunyeva str
+50 Depovska str / Turhunyeva str
+60 Depovska str / Turhunyeva str
+50 Vasylya Danylevskoho str/Pidhirnyy str
+20 Pidhirnyy lane /Turhunyeva str
+50 Pidhirnyy lane /Turhunyeva str
+100 Pidhirnyy lane /Turhunyeva str
+150 Pidhirnyy lane /Turhunyeva str
+120 Klavdiyi Shulzhenko str/ Druzhby str
+100 Druzhby str/B. Khmelnytskoho str
+50 B. Khmelnytskoho str /Vodoprovidnyy lane
+50 Myudovska str/ Myudovska lane
+100 Shmidta str / Likarnyanyy lane
+50 Likarnyanyy lane / Likarnyanyy str
+50 Admirala Ushakova str / Zaliznychnyy lane
+150 Zaliznychnyy lane,32
+100 Shkilna str,31
+100 Shkilna str/ Admirala Ushakova str
+60 Shkilna str /Depovska str

@@ -1,0 +1,51 @@
+ Nova Poshta
+ Slobozhanska str,82
+ Zakhidna str/Protochna str
+ Zakhidna str,20
+ 8 Bereznya str,32
+ Zlahody str,79
+ Zlahody str/Gagarina str
+ Gagarina str,77
+ Gagarina str,81
+ Gagarina str - Cooperativna str
+ Cooperativna str,20
+ Cooperativna str/Zlahody str
+ Zlahody str/Karla Marksa str
+ Zlahody str,47
+ Robocha str,10
+ Robocha str/Dzherelna str
+ Dzherelna str,18
+ Zvyazku str/Veterynarna str
+ Zvyazku str/ Depovska str
+ Depovska str / Veterynarna str
+ Depovska str/ Shkilna str
+ Shkilna str / Bibliotechniy lane
+ Bibliotechniy lane / Depovska str
+ Depovska str/Shmidta str
+ Depovska str / Mododska str
+ Depovska str / Turhunyeva str
+ Turhunyeva str/Vasylya Danylevskoho str
+ Vasylya Danylevskoho str/Pidhirnyy str
+ Pidhirnyy str / Pidhirnyy lane
+ Pidhirnyy lane /Turhunyeva str
+ Pidhirnyy lane /Klavdiyi Shulzhenko str
+ Klavdiyi Shulzhenko str/ Druzhby str
+ Druzhby str/B. Khmelnytskoho str
+ B. Khmelnytskoho str /Vodoprovidnyy lane
+ Myudovska str/ Myudovska lane
+ Myudovska str / Kasicha str
+ Myudovska str/ Shmidta str
+ Shmidta str / Oleksandra Hryboyedova str
+ Oleksandra Hryboyedova str/Shmidta lane
+ Shmidta str / Likarnyanyy lane
+ Likarnyanyy lane / Likarnyanyy str
+ Likarnyanyy str / Admirala Ushakova str
+ Admirala Ushakova str / Zaliznychnyy lane
+ Zaliznychnyy lane,32
+ Shkilna str,52
+ Shkilna str,31
+ Shkilna str/ Admirala Ushakova str
+ Shkilna str/Bibliotechnyy lane
+ Shkilna str /Depovska str
+ Veterynarna str/ Slobozhanska str
+ Slobozhanska str / Admirala Ushakova str

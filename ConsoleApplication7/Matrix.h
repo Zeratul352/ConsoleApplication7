@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdio>
 #include <vector>
+#include <algorithm>
 #include "Error.h"
 using namespace std;
 class Matrix
@@ -24,6 +25,7 @@ public:
 	Matrix(string str);
 	Matrix(const Matrix &object);
 	Matrix CreateNew();
+	
 	static Matrix StringToMatrix(string str);
 	Matrix operator+(double a);
 	Matrix operator+(string str);
@@ -71,6 +73,7 @@ public:
 	int GetWidth();
 	int GetConstWidth()const;
 	double GetSumOfElements(Matrix matrix);
+	//void FloydAlgorythm();
 	~Matrix();
 };
 ostream &operator<<(ostream & cout, const Matrix& object);
